@@ -92,21 +92,25 @@ void main(){
 
    while(TRUE)
    {
-      //unsigned int16 distance = triggerSensor();
+      //lance une impulsion au niveau de la sonde
       output_low(TRIGGER);
       delay_ms(10);
       output_high(TRIGGER);
       delay_us(10);
       output_low(TRIGGER);
 
+      //on attend que l'echo parte
       while(!input(ECHO)){
       }
       set_timer0(0);
 
+      //on attend que l'echo revienne
       while(input(ECHO) && distance < 25000){
       }
 
+      //on récupère le temps, et on le divise par 2 pour avoir un aller
       distance = get_timer0();
+      distance= distance/2;
 
       if (distance > limiteHigh){
         output_high(LED_RED);
