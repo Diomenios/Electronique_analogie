@@ -1,6 +1,6 @@
-Coucou Emile
+Bonjour et Bienvenu(e) sur le Git du projet d'electronique analogique
 
-#Bibliographie
+# Bibliographie
 
 ## lien vers les sources pour le code C
 
