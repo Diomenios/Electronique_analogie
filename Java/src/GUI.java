@@ -1,4 +1,6 @@
 
+
+
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
@@ -73,16 +75,13 @@ public class GUI extends JFrame implements SerialPortEventListener{
 					 lmax.setText("max : "+max);
 					 OutputStream out = port.getOutputStream();
 					 BufferedWriter monBuffer = new BufferedWriter(new OutputStreamWriter(port.getOutputStream()));
-					 out.write((byte) new Integer(min).byteValue());
-					 out.flush();
-					 System.out.println((byte) new Integer(min).byteValue());
-	    			 out.write((char)max);
-	    			 out.flush();
+					 out.write(min);
+					 out.write(max);
 					 alerte(mi , ma);
 				}catch(Error e1 ){
 					System.out.println("veuillez indiquer un chiffre");
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
+					System.out.println("veuillez indiquer un chiffre");
 					e1.printStackTrace();
 				}
 				
